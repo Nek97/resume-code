@@ -7,7 +7,7 @@ import Portfolio from './components/portfolio/portfolio'
 import Testimonials from './components/testimonials/testimonials'
 import Footer from './components/footer/footer'
 
-const App = () => (
+const App: React.FC = () => (
   <AppContext>
     <div className="App">
       <Header />
