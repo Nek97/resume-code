@@ -1,61 +1,34 @@
-import React from "react"
-import autoBind from "react-autobind"
-import { Vocabulary, GetLanguages} from "./components/languages/Vocabulary"
+import React, { createContext, useMemo, useState } from "react"
+import { Vocabulary, GetLanguages } from "./components/languages/Vocabulary"
 
-/** @instance @type {AppContext} */
-export const AppCtxStore = React.createContext({})
+export const AppCtxStore = createContext({})
 
-export const user = {
-    id: 0
-}
+export default function AppContext({ children }) {
+  const [languageCode, setLanguageCode] = useState(() => {
+    const stored = localStorage.getItem("language")
+    return stored && stored !== "" ? stored : "en_GB"
+  })
 
-export default class AppContext extends React.Component {
-    constructor(props) {
-        super(props)
-        autoBind(this);
+  const languages = useMemo(() => GetLanguages(), [])
+  const vocabulary = useMemo(() => Vocabulary(languageCode), [languageCode])
 
-        let languageCode = localStorage.getItem("language");
+  const setLanguage = (code) => {
+    localStorage.setItem("language", code)
+    setLanguageCode(code)
+  }
 
-        if (languageCode === null || languageCode === '') {
-            languageCode = "en_GB"
-        }
+  const value = useMemo(
+    () => ({
+      languageCode,
+      vocabulary,
+      languages,
+      setLanguage,
+      getLanguageCode: () => languageCode,
+      getVocabulary: () => vocabulary,
+      getLanguages: () => languages,
+    }),
+    [languageCode, vocabulary, languages]
+  )
 
-        this.state = {
-            languageCode: languageCode,
-            vocabulary: Vocabulary(languageCode),
-            languages: GetLanguages()
-        }
-    }
-
-    /**
-     * Actions
-     * @param {*} languageCode 
-     */
-    async setLanguage(languageCode) {
-        await this.setState({
-            languageCode: languageCode,
-            vocabulary: Vocabulary(languageCode)
-        })
-
-    }
-    
-    getLanguageCode() {
-        return this.state.languageCode ? this.state.languageCode : 'en_GB';
-    }
-
-    getVocabulary() {
-        return this.state.vocabulary ? this.state.vocabulary : Vocabulary('en_GB');
-    }
-
-    getLanguages() {
-        return this.state.languages ? this.state.languages : null
-    }
-
-    render() {
-        return <AppCtxStore.Provider value={this}>
-            <AppCtxStore.Consumer>
-                {context => this.props.children(context)}
-            </AppCtxStore.Consumer>
-        </AppCtxStore.Provider>
-    }
+  return <AppCtxStore.Provider value={value}>{children}</AppCtxStore.Provider>
 }
