@@ -9,9 +9,9 @@
     "works": "works",
     "testimonials": "testimonials",
     "homeTitle": "I'm Aniello Tortora.",
-    "homeDescription": "I'm a Netherlands based @web @developer, @project @manager and @web @designer creating awesome and effective websites and web applications for companies of all sizes around the globe. Let's @start @scrolling and learn more @about @me in mine @ReactJS based resume.",
+    "homeDescription": "Experienced software engineer with a career spanning project management and hands-on coding, frequently guiding teams through complex tasks.",
     "about_me": "About Me",
-    "about_me_description": "I'm Aniello, a Netherlands based web developer, project manager, and web designer creating awesome and effective websites and web applications for companies of all sizes around the globe. I'm an undergraduate in Computer Science.#I've 10 years of experience in software development and I usually spend my time making research and working in the field of IT to continue to grow. I've started with the basic programming language, like c, java, and Php.#My career is started in 2012 with my first website for an enterprise, since of that moment I've started freelancing during my college time, in 2017 I become internal of an enterprise and in 2018 I become the head developer of the company.#When I've understood the computer science was a true passion and not only a work I've left engineering and I've started my university study of computer science, at the same time I've continued to work to a lot of projects alone or as internal, but at the start of 2019 I've applied to the Red Square Team.#In most of the projects I was assigned to, I was left free to manage and manage my colleagues until I officially became a project manager within the team, but this did not move me away from programming the most important and critical are assigned to me, as well as the creation of styles as I can faithfully emulate or create an element that is required of me. I'm also involved as a lead developer of Azeroth Shard Launcher. I always look for perfect, effective, and practical solutions to any potential problem. I love the challenges that programming offers",
+    "about_me_description": "Experienced software engineer with a career spanning project management and hands-on coding, frequently guiding teams through complex tasks. Prepared for technical leadership and mentoring, utilizing a multifaceted approach to deliver effective solutions ranging from standard fixes to highly creative out-of-the-box ideas. Method emphasizes practicality and efficiency, consistently pushing boundaries to meet demanding goals by merging technical rigor with innovative problem-solving.",
     "contact_details": "Contact Details",
     "contact_address_name": "Aniello Tortora",
     "contact_address_location": "Netherlands",
@@ -27,8 +27,8 @@
     "contact_message_warning": "Please fix the errors and resend the form.",
     "contact_message_success": "Your message was sent, thank you!",
     "contact_address_title": "Address and Phone",
-    "contact_address_street": "Nocera",
-    "contact_address_city": "Netherlands",
+    "contact_address_street": "Netherlands",
+    "contact_address_city": "",
     "download_resume": "Download English Resume",
     "download_resume_link": "cv/Aniello_Tortora-CV.pdf",
     "education": "Education",
@@ -52,84 +52,76 @@
     "work": "work",
     "work_elements": [
         {
-            "name": "Bitvavo",
-            "role": "Backend developer",
+            "name": "VITA HEALTH",
+            "role": "BACKEND ENGINEER",
+            "date_start": "April 2024",
+            "date_to": "June 2026",
+            "description": "Maintained and optimized a legacy PHP and MySQL backend, subsequently migrating the infrastructure to AWS EC2 and shifting core services to a Node.js and TypeScript stack. Refactored the database architecture from DynamoDB to PostgreSQL to enhance data structure and system maintainability. Built CI/CD pipelines, documented system architecture, and modularized the codebase for improved scalability. Developed complex algorithms specifically for personalized diet and workout generation."
+        },
+        {
+            "name": "FINANZA.TECH",
+            "role": "FULLSTACK DEVELOPER",
+            "date_start": "January 2023",
+            "date_to": "March 2024",
+            "description": "Developed the public portal and internal administration system, managing product purchase flows and Stripe integrations. I designed advanced algorithms to parse company reports and automatically reconstruct complex corporate structures, entity networks, and beneficial ownerships, constantly balancing fast delivery with deep technical adaptability across multiple stack layers."
+        },
+        {
+            "name": "BITVAVO",
+            "role": "BACKEND DEVELOPER",
             "date_start": "January 2021",
             "date_to": "August 2022",
-            "description": "As a backend developer for Bitvavo, I mainly developed the administration panel for the support team, as well as the creation and maintenance of many features of other projects as well. My main tasks were the creation of a multilevel RBAC authorization system, the creation of endpoints. The main technologies used for the project are NestJs, Lambda, Typescript, Javascript, Npm, Graphql, Rest, Mysql, Typeorm, Aws, Docker, K8s, Github Actions"
+            "description": "Acted as the ultimate technical escalation point, performing high-stakes, live troubleshooting and debugging on mission-critical AWS Lambda transaction pipelines. Spearheaded the architectural design and implementation of distributed microservices, ensuring high availability, security, and systemic scalability. Engineered the core administration panel for the support team and architected a robust, multilevel RBAC authorization system to secure internal operations. Authored, published, and maintained the open-source nest-yalc library, driving code standardization and efficiency across multiple R&D projects."
         },
         {
-            "name": "Red Square Team",
-            "role": "Senior Developer",
-            "date_start": "January 2019",
-            "date_to": "Present",
-            "description": "The R.S.T. is a team of freelancers who work together to manage multiple projects of various entities at the same time, each has its main area of work, but at the same time everyone can do everything. Specifically, I deal with the development of the frontend with the creation of styles and all the graphic and functional elements, subsequently I connect everything with the server if it has already been created by my colleagues, but in the case of smaller projects I also take care of the server and the database."
-        },
-        {
-            "name": "Proxt s.a.s.",
-            "role": "Head Developer",
-            "date_start": "March 2017",
-            "date_to": "October 2018",
-            "description": "Proxt s.a.s. is a small local company that had set itself the goal of digitizing Italian stores to expand the online market and the possibility of meeting and booking professionals of all kinds through the Joomap app. My assumption made this possible, initially, the app was developed using ionic 1, finished the first version I rewrote the app in ionic 3 adding all the functionality necessary for publication."
-        },
-        {
-            "name": "Website Developer",
-            "role": "Freelancer",
-            "date_start": "January 2011",
-            "date_to": "February 2017",
-            "description": "At the age of 14, I started making websites using html, php, js and css, until then I had dedicated myself to cms. Gradually I got more and more interesting projects and bigger and bigger challenges that led me to love more and more the world of programming, until the day I received my first contract as a programmer as an intern in a company, and thanks to my previous career I was immediately qualified as a senior developer, my skills of self-management and team management have allowed me to almost always have a role as a project manager in team work"
+            "name": "FREELANCING",
+            "role": "SOFTWARE DEVELOPER",
+            "date_start": "June 2016",
+            "date_to": "October 2020",
+            "description": "Delivered end-to-end full-stack solutions across multiple independent projects, including e-commerce systems, a desktop launcher (Azeroth Shard), custom CMS modules, and comprehensive B2C web applications. Managed all project phases from structural analysis to the implementation of interactive frontends (React, Angular) and robust backends. Integrated external tools and APIs, such as Google Maps and payment gateways, while resolving critical server-side and client-side bugs to ensure high performance."
         }
     ],
     "skills": "skills",
     "skills_description": "In my career I have had the opportunity to work in different teams and to develop different projects, each of them with its own peculiarities, and these experiences over the years have allowed me to develop my skills more and more.",
     "skills_list": [
         {
-            "label": "ReactJS",
-            "className": "reactjs"
-        },
-        {
-            "label": "Javascript / NodeJS",
+            "label": "JavaScript / Node.js",
             "className": "javascript"
         },
         {
-            "label": "GraphQL / Apollo Framework",
-            "className": "graphql"
-        },
-        {
-            "label": "Typescript / Angular",
+            "label": "TypeScript",
             "className": "typescript"
         },
         {
-            "label": "Bootstrap Framework",
-            "className": "bootstrap"
+            "label": "NestJs",
+            "className": "nestjs"
         },
         {
             "label": "PHP",
             "className": "php"
         },
         {
-            "label": "HTML & CSS",
-            "className": "html"
-        },
-        {
-            "label": "Testing / Debugging",
-            "className": "testing"
-        },
-        {
-            "label": "Electron",
-            "className": "electron"
-        },
-        {
-            "label": "VS Code",
-            "className": "vscode"
-        },
-        {
-            "label": "SQL Database",
+            "label": "MySQL / PostgreSQL",
             "className": "sql"
         },
         {
-            "label": "jQuery",
-            "className": "jquery"
+            "label": "Docker / Kubernetes",
+            "className": "docker"
+        },
+        {
+            "label": "GraphQL / REST API",
+            "className": "graphql"
+        },
+        {
+            "label": "Git / CI/CD",
+            "className": "git"
+        },
+        {
+            "label": "React / Angular",
+            "className": "reactjs"
+        },
+        {
+            "label": "DynamoDB / MongoDB",
+            "className": "database"
         }
     ],
     "check_out_works": "Check out some of my works.",
