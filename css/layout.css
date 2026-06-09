@@ -1072,4 +1072,66 @@ footer .social-links li:first-child { margin-left: 0; }
  	border-radius: 100%;
 }
 #go-top a:hover { background-color: #0F9095; }
-
+.break-word{
+  word-wrap: break-word;
+}
+.portfolio-item .item-wrap{
+   background-color:#ebeeee;
+}
+@media print {
+   .no-print{
+      display: none;
+   }
+   body{
+      color: black;
+      background-color: white;
+      word-wrap: break-word;
+   }
+   #home{
+      color: black!important;
+      background-color: white;
+      background-image: none;
+   }
+   h1{
+      color: black!important;
+   }
+   h2{
+      color: black!important;
+   }
+   h3{
+      color: black!important;
+   }
+   span{
+      color: black!important;
+   }
+   a{
+      color: black!important;
+   }
+   p{
+      color: black!important;
+   }
+   #about{
+      background-color: white!important;
+   }
+   #about .profile-pic {
+      position: relative!important;
+      width: 120px!important;
+      height: 120px!important;
+      border-radius: 100%!important;
+   }
+   #portfolio{
+      background-color: white!important;
+   }
+   #resume{
+      padding: 0px;
+   }
+   #portfolio{
+      padding: 0px;
+   }
+   .portfolio-item .item-wrap{
+      background-color:white;
+   }
+   .no-print-margin{
+      margin: 0px!important;
+   }
+}
