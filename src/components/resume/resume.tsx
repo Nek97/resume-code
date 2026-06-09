@@ -8,26 +8,6 @@ const Resume = (): JSX.Element | null => {
 
   return (
     <section id="resume">
-      <div className="row education">
-        <div className="three columns header-col">
-          <h1>
-            <span>{vocabulary.education}</span>
-          </h1>
-        </div>
-        <div className="nine columns main-col">
-          {vocabulary.education_elements.map((e: any, k: number) => (
-            <div className="row item" key={`education${k}`}>
-              <div className="twelve columns">
-                <h3>{e.name}</h3>
-                <p className="info">
-                  {e.state} <span>•</span> <em className="date">{e.date}</em>
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="row work">
         <div className="three columns header-col">
           <h1>
@@ -46,6 +26,26 @@ const Resume = (): JSX.Element | null => {
                   </em>
                 </p>
                 <p className="break-word">{e.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="row education">
+        <div className="three columns header-col">
+          <h1>
+            <span>{vocabulary.education}</span>
+          </h1>
+        </div>
+        <div className="nine columns main-col">
+          {vocabulary.education_elements.map((e: any, k: number) => (
+            <div className="row item" key={`education${k}`}>
+              <div className="twelve columns">
+                <h3>{e.name}</h3>
+                <p className="info">
+                  {e.state} <span>•</span> <em className="date">{e.date}</em>
+                </p>
               </div>
             </div>
           ))}

@@ -60,7 +60,9 @@ const Portfolio = (): JSX.Element | null => {
             </div>
             <div className="link-box">
               <a href={e.details}>{vocabulary.details}</a>
-              <a href="#!" className="popup-modal-dismiss">{vocabulary.close}</a>
+              <a href="#!" className="popup-modal-dismiss">
+                {vocabulary.close}
+              </a>
             </div>
           </div>
         ))}
@@ -70,4 +72,3 @@ const Portfolio = (): JSX.Element | null => {
 };
 
 export default Portfolio;
-
