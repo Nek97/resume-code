@@ -9,11 +9,11 @@ const Header = () => {
 		<header id="home">
 			<nav id="nav-wrap" className="no-print">
 				{/* eslint-disable-next-line*/}
-				<a className="mobile-btn" href="#nav-wrap" title="Show navigation">
+				<a className="mobile-btn" href="#nav-wrap" title={vocabulary.show_navigation}>
 					{vocabulary.show_navigation}
 				</a>
 				{/* eslint-disable-next-line*/}
-				<a className="mobile-btn" href="#" title="Hide navigation">
+				<a className="mobile-btn" href="#" title={vocabulary.hide_navigation}>
 					{vocabulary.hide_navigation}
 				</a>
 				<ul id="nav" className="nav no-print">

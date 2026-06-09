@@ -60,54 +60,12 @@ const Resume = () => {
 					<p>{vocabulary.skills_description}</p>
 					<div className="bars">
 						<ul className="skills">
-							<li>
-								<span className="bar-expand reactjs" />
-								<em>ReactJS</em>
-							</li>
-							<li>
-								<span className="bar-expand javascript" />
-								<em>Javascript / NodeJS</em>
-							</li>
-							<li>
-								<span className="bar-expand graphql" />
-								<em>GraphQL / Apollo Framework</em>
-							</li>
-							<li>
-								<span className="bar-expand typescript" />
-								<em>Typescript / Angular</em>
-							</li>
-							<li>
-								<span className="bar-expand bootstrap" />
-								<em>Bootstrap Framework</em>
-							</li>
-							<li>
-								<span className="bar-expand php" />
-								<em>PHP</em>
-							</li>
-							<li>
-								<span className="bar-expand html" />
-								<em>HTML & CSS</em>
-							</li>
-							<li>
-								<span className="bar-expand testing" />
-								<em>Testing / Debugging</em>
-							</li>
-							<li>
-								<span className="bar-expand electron" />
-								<em>Electron</em>
-							</li>
-							<li>
-								<span className="bar-expand vscode" />
-								<em>VS Code</em>
-							</li>
-							<li>
-								<span className="bar-expand sql" />
-								<em>SQL Database</em>
-							</li>
-							<li>
-								<span className="bar-expand jquery" />
-								<em>jQuery</em>
-							</li>
+							{vocabulary.skills_list.map((skill, index) => (
+								<li key={`skill-${index}`}>
+									<span className={`bar-expand ${skill.className}`} />
+									<em>{skill.label}</em>
+								</li>
+							))}
 						</ul>
 					</div>
 				</div>

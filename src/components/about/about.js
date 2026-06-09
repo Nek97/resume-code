@@ -14,21 +14,21 @@ const About = () => {
 				<div className="nine columns main-col">
 					<h2>{vocabulary.about_me}</h2>
 					<p>
-						{ReactStringReplace(vocabulary.about_me_description, /#/g, () => (
-							<br />
+						{ReactStringReplace(vocabulary.about_me_description, /#/g, (match, i) => (
+							<br key={`break-${i}`} />
 						))}
 					</p>
 					<div className="row">
 						<div className="columns contact-details">
 							<h2>{vocabulary.contact_details}</h2>
 							<p className="address">
-								<span>Aniello Tortora</span>
+								<span>{vocabulary.contact_address_name}</span>
 								<br />
-								<span>Nocera Inferiore, SA 84014 IT</span>
+								<span>{vocabulary.contact_address_location}</span>
 								<br />
-								<span>tortora.aniello.ta@gmail.com</span>
+								<span>{vocabulary.contact_address_email}</span>
 								<br />
-								<span>+39 3457086780</span>
+								<span>{vocabulary.contact_address_phone}</span>
 								<br />
 							</p>
 						</div>

@@ -1,7 +1,4 @@
-import en_GB from "./en_GB.json"
-import _It_IT from "./it_IT.json"
-
-var it_IT = { ...en_GB, ..._It_IT }
+import Vocabularies, { validLanguages, supportedLanguages } from './vocabularies'
 
 /**
  * Pass a lang code and return a formatted vocabulary
@@ -11,14 +8,10 @@ var it_IT = { ...en_GB, ..._It_IT }
  * @return {object} Return a object with all formatted string in the code language.
  */
 export function Vocabulary(code) {
-    switch (code) { 
-        case 'en_GB':
-            return en_GB
-        case 'it_IT':
-            return it_IT
-        default:
-            return en_GB
+    if (validLanguages.includes(code) && Vocabularies[code]) {
+        return Vocabularies[code]
     }
+    else return Vocabularies?.en_GB || {}
 }
 
 /**
@@ -27,16 +20,8 @@ export function Vocabulary(code) {
  * @return {object} Return a object with language_code && language_info data.
  */
 export function GetLanguages() {
-    return [
-        {
-            language_code: en_GB.language_code,
-            language_info: en_GB.language_info
-        },
-        {
-            language_code: it_IT.language_code,
-            language_info: it_IT.language_info
-        }
-    ]
+
+    return supportedLanguages
 }
 
 /**

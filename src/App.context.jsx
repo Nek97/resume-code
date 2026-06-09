@@ -4,12 +4,14 @@ import { Vocabulary, GetLanguages } from "./components/languages/Vocabulary"
 export const AppCtxStore = createContext({})
 
 export default function AppContext({ children }) {
+    const languages = useMemo(() => GetLanguages(), [])
+    const defaultLanguage = languages[0]?.language_code || "en_GB"
+
     const [languageCode, setLanguageCode] = useState(() => {
         const stored = localStorage.getItem("language")
-        return stored && stored !== "" ? stored : "en_GB"
+        return stored && stored !== "" ? stored : defaultLanguage
     })
 
-    const languages = useMemo(() => GetLanguages(), [])
     const vocabulary = useMemo(() => Vocabulary(languageCode), [languageCode])
 
     const setLanguage = (code) => {

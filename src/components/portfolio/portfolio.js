@@ -14,7 +14,7 @@ const Portfolio = () => {
 							<div className="columns portfolio-item" key={`portfolio_element_${k}`}>
 								<div className="item-wrap">
 									{/* eslint-disable-next-line*/}
-									<a href={`#modal-${k}`} title>
+									<a href={`#modal-${k}`} title={vocabulary.portfolio_view_title}>
 										<img alt="" src={e.icon} />
 										<div className="overlay">
 											<div className="portfolio-item-meta">

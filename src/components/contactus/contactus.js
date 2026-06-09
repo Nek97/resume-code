@@ -1,102 +1,95 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppCtxStore } from '../../App.context'
 
-const Contact = () => (
-	<section id="contact">
-		<div className="row section-head">
-			<div className="two columns header-col">
-				<h1>
-					<span>Get In Touch.</span>
-				</h1>
-			</div>
-			<div className="ten columns">
-				<p className="lead">
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-					eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-					voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-				</p>
-			</div>
-		</div>
-		<div className="row">
-			<div className="eight columns">
-				<form action method="post" id="contactForm" name="contactForm">
-					<fieldset>
-						<div>
-							<label htmlFor="contactName">
-								Name <span className="required">*</span>
-							</label>
-							<input type="text" defaultValue size={35} id="contactName" name="contactName" />
-						</div>
-						<div>
-							<label htmlFor="contactEmail">
-								Email <span className="required">*</span>
-							</label>
-							<input type="text" defaultValue size={35} id="contactEmail" name="contactEmail" />
-						</div>
-						<div>
-							<label htmlFor="contactSubject">Subject</label>
-							<input type="text" defaultValue size={35} id="contactSubject" name="contactSubject" />
-						</div>
-						<div>
-							<label htmlFor="contactMessage">
-								Message <span className="required">*</span>
-							</label>
-							<textarea cols={50} rows={15} id="contactMessage" name="contactMessage" defaultValue={""} />
-						</div>
-						<div>
-							<button className="submit">Submit</button>
-							<span id="image-loader">
-								<img alt="" src="images/loader.gif" />
-							</span>
-						</div>
-					</fieldset>
-				</form>
-				<div id="message-warning"> Error boy</div>
-				<div id="message-success">
-					<i className="fa fa-check" />Your message was sent, thank you!
-					<br />
+const Contact = () => {
+	const { vocabulary } = useContext(AppCtxStore)
+
+	return (
+		<section id="contact">
+			<div className="row section-head">
+				<div className="two columns header-col">
+					<h1>
+						<span>{vocabulary.contact_section_title}</span>
+					</h1>
 				</div>
-			</div>
-			<aside className="four columns footer-widgets">
-				<div className="widget widget_contact">
-					<h4>Address and Phone</h4>
-					<p className="address">
-						Jonathan Doe
-						<br />
-						1600 Amphitheatre Parkway
-						<br />
-						Mountain View, CA 94043 US
-						<br />
-						<span>(123) 456-7890</span>
+				<div className="ten columns">
+					<p className="lead">
+						{vocabulary.contact_section_lead}
 					</p>
 				</div>
-				<div className="widget widget_tweets">
-					<h4 className="widget-title">Latest Tweets</h4>
-					<ul id="twitter">
-						<li>
-							<span>
-								This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-								Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-								<a href="#">http://t.co/CGIrdxIlI3</a>
-							</span>
-							<b>
-								<a href="#">2 Days Ago</a>
-							</b>
-						</li>
-						<li>
-							<span>
-								Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-								eaque ipsa quae ab illo inventore veritatis et quasi
-								<a href="#">http://t.co/CGIrdxIlI3</a>
-							</span>
-							<b>
-								<a href="#">3 Days Ago</a>
-							</b>
-						</li>
-					</ul>
+			</div>
+			<div className="row">
+				<div className="eight columns">
+					<form action method="post" id="contactForm" name="contactForm">
+						<fieldset>
+							<div>
+								<label htmlFor="contactName">
+									{vocabulary.contact_label_name} <span className="required">*</span>
+								</label>
+								<input type="text" defaultValue size={35} id="contactName" name="contactName" />
+							</div>
+							<div>
+								<label htmlFor="contactEmail">
+									{vocabulary.contact_label_email} <span className="required">*</span>
+								</label>
+								<input type="text" defaultValue size={35} id="contactEmail" name="contactEmail" />
+							</div>
+							<div>
+								<label htmlFor="contactSubject">{vocabulary.contact_label_subject}</label>
+								<input type="text" defaultValue size={35} id="contactSubject" name="contactSubject" />
+							</div>
+							<div>
+								<label htmlFor="contactMessage">
+									{vocabulary.contact_label_message} <span className="required">*</span>
+								</label>
+								<textarea cols={50} rows={15} id="contactMessage" name="contactMessage" defaultValue={""} />
+							</div>
+							<div>
+								<button className="submit">{vocabulary.contact_submit}</button>
+								<span id="image-loader">
+									<img alt="" src="images/loader.gif" />
+								</span>
+							</div>
+						</fieldset>
+					</form>
+					<div id="message-warning">{vocabulary.contact_message_warning}</div>
+					<div id="message-success">
+						<i className="fa fa-check" />{vocabulary.contact_message_success}
+						<br />
+					</div>
 				</div>
-			</aside>
-		</div>
-	</section>
-)
+				<aside className="four columns footer-widgets">
+					<div className="widget widget_contact">
+						<h4>{vocabulary.contact_address_title}</h4>
+						<p className="address">
+							{vocabulary.contact_address_name}
+							<br />
+							{vocabulary.contact_address_street}
+							<br />
+							{vocabulary.contact_address_city}
+							<br />
+							<span>{vocabulary.contact_address_phone}</span>
+						</p>
+					</div>
+					<div className="widget widget_tweets">
+						<h4 className="widget-title">{vocabulary.latest_tweets_title}</h4>
+						<ul id="twitter">
+							{vocabulary.latest_tweets.map((tweet, idx) => (
+								<li key={`tweet-${idx}`}>
+									<span>
+										{tweet.text}{' '}
+										<a href={tweet.link}>{tweet.link}</a>
+									</span>
+									<b>
+										<a href={tweet.link}>{tweet.age}</a>
+									</b>
+								</li>
+							))}
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</section>
+	)
 
-export default Contact
+	export default Contact
