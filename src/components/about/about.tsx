@@ -2,8 +2,10 @@ import React, { useContext } from 'react'
 import ReactStringReplace from 'react-string-replace'
 import { AppCtxStore } from '../../App.context'
 
-const About = () => {
-	const { vocabulary } = useContext(AppCtxStore)
+const About = (): JSX.Element | null => {
+	const appCtx = useContext(AppCtxStore)
+	if (!appCtx) return null
+	const { vocabulary } = appCtx
 
 	return (
 		<section id="about">
@@ -34,8 +36,7 @@ const About = () => {
 						</div>
 						<div className="columns download">
 							<p>
-								{/* eslint-disable-next-line*/}
-								<a href={vocabulary.download_resume_link} className="button no-print" download>
+										<a href={vocabulary.download_resume_link} className="button no-print" download>
 									<i className="fa fa-download" />{vocabulary.download_resume}
 								</a>
 							</p>
@@ -48,3 +49,4 @@ const About = () => {
 }
 
 export default About
+

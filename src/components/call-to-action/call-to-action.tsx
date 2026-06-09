@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CallToAction = () => (
+const CallToAction = (): JSX.Element => (
 	<section id="call-to-action">
 		<div className="row">
 			<div className="two columns header-col">

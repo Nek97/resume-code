@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { AppCtxStore } from '../../App.context'
 
-const Resume = () => {
-	const { vocabulary } = useContext(AppCtxStore)
+const Resume = (): JSX.Element | null => {
+	const appCtx = useContext(AppCtxStore)
+	if (!appCtx) return null
+	const { vocabulary } = appCtx
 
 	return (
 		<section id="resume">

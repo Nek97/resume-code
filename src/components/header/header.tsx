@@ -2,54 +2,48 @@ import React, { useContext } from 'react'
 import ReactStringReplace from 'react-string-replace'
 import { AppCtxStore } from '../../App.context'
 
-const Header = () => {
-	const { vocabulary, languages, setLanguage } = useContext(AppCtxStore)
+const Header = (): JSX.Element | null => {
+	const appCtx = useContext(AppCtxStore)
+	if (!appCtx) return null
+	const { vocabulary, languages, setLanguage } = appCtx
 
 	return (
 		<header id="home">
 			<nav id="nav-wrap" className="no-print">
-				{/* eslint-disable-next-line*/}
 				<a className="mobile-btn" href="#nav-wrap" title={vocabulary.show_navigation}>
 					{vocabulary.show_navigation}
 				</a>
-				{/* eslint-disable-next-line*/}
-				<a className="mobile-btn" href="#" title={vocabulary.hide_navigation}>
+				<a className="mobile-btn" href="#nav-wrap" title={vocabulary.hide_navigation}>
 					{vocabulary.hide_navigation}
 				</a>
 				<ul id="nav" className="nav no-print">
-					{/* eslint-disable-next-line*/}
 					<li className="current">
 						<a className="smoothscroll" href="#home">
 							{vocabulary.home}
 						</a>
 					</li>
-					{/* eslint-disable-next-line*/}
 					<li>
 						<a className="smoothscroll" href="#about">
 							{vocabulary.about}
 						</a>
 					</li>
-					{/* eslint-disable-next-line*/}
 					<li>
 						<a className="smoothscroll" href="#resume">
 							{vocabulary.resume}
 						</a>
 					</li>
-					{/* eslint-disable-next-line*/}
 					<li>
 						<a className="smoothscroll" href="#portfolio">
 							{vocabulary.works}
 						</a>
 					</li>
-					{/* eslint-disable-next-line*/}
 					<li>
 						<a className="smoothscroll" href="#testimonials">
 							{vocabulary.testimonials}
 						</a>
 					</li>
 					<li className="no-print">
-						{/* eslint-disable-next-line*/}
-						<a>
+						<div>
 							<select
 								onChange={(event) => setLanguage(event.target.value)}
 								className="language_select"
@@ -64,7 +58,7 @@ const Header = () => {
 									</option>
 								))}
 							</select>
-						</a>
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -116,3 +110,4 @@ const Header = () => {
 }
 
 export default Header
+

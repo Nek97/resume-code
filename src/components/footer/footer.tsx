@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { AppCtxStore } from '../../App.context'
 
-const Footer = () => {
-	const { vocabulary } = useContext(AppCtxStore)
+const Footer = (): JSX.Element | null => {
+	const appCtx = useContext(AppCtxStore)
+	if (!appCtx) return null
+	const { vocabulary } = appCtx
 
 	return (
 		<footer className="no-print">
